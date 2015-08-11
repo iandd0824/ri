@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		44BDD7E71B79B05B005A6186 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44BDD7E41B79B032005A6186 /* CryptoSwift.framework */; };
+		44BDD7E81B79B05B005A6186 /* CryptoSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 44BDD7E41B79B032005A6186 /* CryptoSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		44DDE29B1B76F85500B562DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDE29A1B76F85500B562DE /* AppDelegate.swift */; };
 		44DDE29E1B76F85500B562DE /* ri.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 44DDE29C1B76F85500B562DE /* ri.xcdatamodeld */; };
 		44DDE2A01B76F85500B562DE /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44DDE29F1B76F85500B562DE /* MasterViewController.swift */; };
@@ -21,6 +23,27 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		44BDD7E31B79B032005A6186 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44BDD7DD1B79B032005A6186 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE45519693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
+		44BDD7E51B79B032005A6186 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44BDD7DD1B79B032005A6186 /* CryptoSwift.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 754BE46019693E190098E6F3;
+			remoteInfo = CryptoSwiftTests;
+		};
+		44BDD7E91B79B05B005A6186 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 44BDD7DD1B79B032005A6186 /* CryptoSwift.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 754BE45419693E190098E6F3;
+			remoteInfo = CryptoSwift;
+		};
 		44DDE2B01B76F85500B562DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 44DDE28D1B76F85500B562DE /* Project object */;
@@ -73,6 +96,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				44DDE2E11B771C1500B562DE /* Alamofire.framework in Embed Frameworks */,
+				44BDD7E81B79B05B005A6186 /* CryptoSwift.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -80,6 +104,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		44BDD7DD1B79B032005A6186 /* CryptoSwift.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CryptoSwift.xcodeproj; path = CryptoSwift/CryptoSwift.xcodeproj; sourceTree = "<group>"; };
 		44DDE2951B76F85500B562DE /* ri.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ri.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		44DDE2991B76F85500B562DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		44DDE29A1B76F85500B562DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -102,6 +127,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				44DDE2E01B771C1500B562DE /* Alamofire.framework in Frameworks */,
+				44BDD7E71B79B05B005A6186 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,12 +141,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		44BDD7DE1B79B032005A6186 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				44BDD7E41B79B032005A6186 /* CryptoSwift.framework */,
+				44BDD7E61B79B032005A6186 /* CryptoSwiftTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		44DDE28C1B76F85500B562DE = {
 			isa = PBXGroup;
 			children = (
 				44DDE2971B76F85500B562DE /* ri */,
 				44DDE2B21B76F85500B562DE /* riTests */,
 				44DDE2961B76F85500B562DE /* Products */,
+				44BDD7DD1B79B032005A6186 /* CryptoSwift.xcodeproj */,
 				44DDE2D01B771AF900B562DE /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -202,6 +238,7 @@
 			);
 			dependencies = (
 				44DDE2E31B771C1500B562DE /* PBXTargetDependency */,
+				44BDD7EA1B79B05B005A6186 /* PBXTargetDependency */,
 			);
 			name = ri;
 			productName = ri;
@@ -260,6 +297,10 @@
 					ProductGroup = 44DDE2D11B771AF900B562DE /* Products */;
 					ProjectRef = 44DDE2D01B771AF900B562DE /* Alamofire.xcodeproj */;
 				},
+				{
+					ProductGroup = 44BDD7DE1B79B032005A6186 /* Products */;
+					ProjectRef = 44BDD7DD1B79B032005A6186 /* CryptoSwift.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -270,6 +311,20 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
+		44BDD7E41B79B032005A6186 /* CryptoSwift.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = CryptoSwift.framework;
+			remoteRef = 44BDD7E31B79B032005A6186 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		44BDD7E61B79B032005A6186 /* CryptoSwiftTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = CryptoSwiftTests.xctest;
+			remoteRef = 44BDD7E51B79B032005A6186 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		44DDE2D81B771AF900B562DE /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -344,6 +399,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		44BDD7EA1B79B05B005A6186 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = CryptoSwift;
+			targetProxy = 44BDD7E91B79B05B005A6186 /* PBXContainerItemProxy */;
+		};
 		44DDE2B11B76F85500B562DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 44DDE2941B76F85500B562DE /* ri */;
@@ -534,6 +594,7 @@
 				44DDE2BB1B76F85500B562DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		44DDE2BC1B76F85500B562DE /* Build configuration list for PBXNativeTarget "riTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +603,7 @@
 				44DDE2BE1B76F85500B562DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

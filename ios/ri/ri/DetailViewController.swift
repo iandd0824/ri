@@ -39,12 +39,12 @@ class DetailViewController: UIViewController {
         super.viewDidAppear(true)
         
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        //let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
-        //if (isLoggedIn != 1) {
-        self.performSegueWithIdentifier("detail_goto_login", sender: self)
-        //} else {
-        //self.usernameLabel.text = prefs.valueForKey("USERNAME") as? String
-        //}
+        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+        if (isLoggedIn != 1) {
+            self.performSegueWithIdentifier("detail_goto_login", sender: self)
+        } else {
+            //self.usernameLabel.text = prefs.valueForKey("USERNAME") as? String
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -52,6 +52,13 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func logoutTapped(sender: AnyObject) {
+    
+        let appDomain = NSBundle.mainBundle().bundleIdentifier
+        NSUserDefaults.standardUserDefaults().removePersistentDomainForName(appDomain!)
+        self.performSegueWithIdentifier("detail_goto_login", sender: self)
+
+    }
 
 }
 

@@ -40,12 +40,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         super.viewDidAppear(true)
         
         let prefs:NSUserDefaults = NSUserDefaults.standardUserDefaults()
-        //let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
-        //if (isLoggedIn != 1) {
+        let isLoggedIn:Int = prefs.integerForKey("ISLOGGEDIN") as Int
+        if (isLoggedIn != 1) {
             self.performSegueWithIdentifier("goto_login", sender: self)
-        //} else {
+        } else {
             //self.usernameLabel.text = prefs.valueForKey("USERNAME") as? String
-        //}
+        }
     }
 
     override func didReceiveMemoryWarning() {
