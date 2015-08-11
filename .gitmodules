@@ -1,3 +1,6 @@
 [submodule "ios/ri/Alamofire"]
 	path = ios/ri/Alamofire
 	url = https://github.com/Alamofire/Alamofire.git
+[submodule "ios/ri/CryptoSwift"]
+	path = ios/ri/CryptoSwift
+	url = https://github.com/krzyzanowskim/CryptoSwift.git
