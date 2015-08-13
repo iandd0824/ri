@@ -49,20 +49,46 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         }
         else {
             
-            let keyString = "Hello this is key"
-            var key2 = [UInt8](keyString.utf8)
+            //let keyString = "Hello this is key"
+            //var key2 = [UInt8](keyString.utf8)
             
-            println(key2)
+            //println(key2)
             
-            let ivString = "this is iv"
-            var iv2 = [UInt8](ivString.utf8)
+            //let ivString = "this is iv"
+            //var iv2 = [UInt8](ivString.utf8)
             
-            println(iv2)
+            //println(iv2)
             
-            let key: [UInt8] = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c]
-            let iv: [UInt8] = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
+            //let key: [UInt8] = [0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c]
+            //let iv: [UInt8] = [0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07,0x08,0x09,0x0A,0x0B,0x0C,0x0D,0x0E,0x0F]
             
-            println(key);
+            let key = "Hello there key!".dataUsingEncoding(NSUTF8StringEncoding)!.arrayOfBytes()
+            
+            
+            
+            let iv = Cipher.randomIV(key.count)
+            
+            let ivstr = NSString(bytes: iv, length: iv.count, encoding: NSUTF8StringEncoding)
+            
+            
+            
+            
+            let ivString = NSString(bytes: key, length: key.count, encoding: NSUTF8StringEncoding)
+            
+            let res = NSData(bytes: iv, length: iv.count)
+
+            let resstr = res.base64EncodedStringWithOptions(nil)
+            
+            println(resstr)
+
+            
+            println("ivString")
+            println(ivstr)
+            
+            println("iv:")
+            println(iv)
+            
+            println(key)
             
             let message = "Hello there!".dataUsingEncoding(NSUTF8StringEncoding)!.arrayOfBytes()
             
@@ -208,6 +234,16 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
         
         
     }
+    
+    class func base64ToByteArray(base64String: String) -> [UInt8]? {
+        if let nsdata = NSData(base64EncodedString: base64String, options: nil) {
+            var bytes = [UInt8](count: nsdata.length, repeatedValue: 0)
+            nsdata.getBytes(&bytes, length: bytes.count)
+            return bytes
+        }
+        return nil // Invalid input
+    }
+
     
      static func encode(bytes: Array<UInt8>) -> String {
         var encodedString = ""
