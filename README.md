@@ -17,14 +17,17 @@ Basic usage
 $ cd server
 $ virtualenv venv
 ```
+
 2. To begin using the virtual environment, it needs to be activated:
 ```sh
 $ source venv/bin/activate
 ```
+
 3. Install packages as usual, for example:
 ```sh
 $ pip install requests
 ```
+
 4. Install requirement.txt
 ```sh
 $ pip install -r requirements.txt
