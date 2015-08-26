@@ -68,3 +68,15 @@ Python 3.4.3 (v3.4.3:9b73f1c3e601, Feb 23 2015, 02:52:03)
 >>> User.create_user('username','password','email')
 <User: username>
 ```
+
+```sh
+Python 3.4.3 (v3.4.3:9b73f1c3e601, Feb 23 2015, 02:52:03) 
+[GCC 4.2.1 (Apple Inc. build 5666) (dot 3)] on darwin
+>>> from mongoengine.django.auth import User
+>>> user = User()
+>>> user.username = 'user3'
+>>> user.password = 'pass'
+>>> user.email = 'user3@gmail.com'
+>>> user.name = 'testname'
+>>> user.save()
+```
