@@ -39,6 +39,12 @@ $ pip install -r requirements.txt
 $ deactivate
 ```
 
+6. Check pip installed package
+
+```sh
+$ pip freeze | grep mongoengine
+```
+
 #### Run server
 
 1. Move to folder ptsd
