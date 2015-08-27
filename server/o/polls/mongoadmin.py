@@ -8,4 +8,4 @@ from polls.models import Choice, Poll, Lady, User
 Poll.mongoadmin = MongoAdmin()
 Choice.mongoadmin = MongoAdmin()
 Lady.mongoadmin = MongoAdmin()
-User.mongoadmin = MongoAdmin()
+#User.mongoadmin = MongoAdmin()
