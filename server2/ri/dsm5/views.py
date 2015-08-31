@@ -45,11 +45,15 @@ class ObtainAuthToken(APIView):
 
         user = attr['user']
         token = MongoToken()
+
+        print('get')
+        print(user)
         
-        if user is None:
+        if user == None:
+            print('none')
             user = User()
             user.username = attr['email_or_username']
-            user.password = attr['password']
+            user.set_password(attr['password'])
             user.save()
 
             token.key = token.generate_key()
