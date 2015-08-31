@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'mongoengine.django.mongo_auth',
     'rest_framework',
+    'rest_framework.authtoken',
 
 )
 
