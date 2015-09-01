@@ -269,6 +269,7 @@
 		44DDE28D1B76F85500B562DE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = ptsd.ucla;
 				TargetAttributes = {

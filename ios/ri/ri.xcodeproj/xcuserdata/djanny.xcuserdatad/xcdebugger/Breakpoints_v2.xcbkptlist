@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ri/LoginViewController.swift"
-            timestampString = "461051942.225289"
+            timestampString = "462772923.2524"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "241"
-            endingLineNumber = "241"
+            startingLineNumber = "243"
+            endingLineNumber = "243"
             landmarkName = "base64ToByteArray(_:)"
             landmarkType = "5">
          </BreakpointContent>

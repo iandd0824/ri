@@ -214,20 +214,22 @@ class LoginViewController: UIViewController,UITextFieldDelegate {
                 // Woa, okay the json object was nil, something went worng. Maybe the server isn't running?
                 let jsonStr = NSString(data: data, encoding: NSUTF8StringEncoding)
                 println("Error could not parse JSON: \(jsonStr)")
-            }
+            }*/
             
-            let user2 = "admin"
+            /*let user2 = "admin"
             let password2 = "admin"
             
             let plainString = "\(username):\(password)" as NSString
             let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
             let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
             
-            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Basic " + base64String!]
+            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Basic " + base64String!]*/
             
-            Alamofire.request(.GET, "http://127.0.0.1:8000/snippets/?format=json")
+            Alamofire.Manager.sharedInstance.session.configuration.HTTPAdditionalHeaders = ["Authorization": "Token vee6c8998ebc8de099518abc11a0e055feeb167c752c0"]
+            
+            Alamofire.request(.GET, "http://127.0.0.1:8000/users/?format=json")
                 .response {(request, response, _, error) in println(response)}
-                .responseJSON { (request, response, JSON, error) in println(JSON)}*/
+                .responseJSON { (request, response, JSON, error) in println(JSON)}
             
         }
         
