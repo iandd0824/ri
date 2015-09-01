@@ -3,8 +3,14 @@ from mongoengine import *
 from dsm5.models import User
 from django.contrib.auth import authenticate
 
+# List Users
+class UserSerializer(serializers.Serializer):
+	pk = serializers.CharField(read_only=True)
+	username = serializers.CharField(max_length=150)
+	email = serializers.CharField(max_length=150)
 
-#Obtain auth token using email instead username
+
+# Obtain auth token using email instead username
 class AuthCustomTokenSerializer(serializers.Serializer):
 	
     email_or_username = serializers.CharField()

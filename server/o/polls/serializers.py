@@ -49,7 +49,7 @@ class LadySerializer(serializers.Serializer):
 
 class UserSerializer(serializers.Serializer):
 	pk = serializers.CharField(read_only=True)
-	username = serializers.CharField(max_length=50)
+	username = serializers.CharField(max_length=150)
 	email = serializers.CharField(max_length=150)
 
 

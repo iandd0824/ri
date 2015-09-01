@@ -8,7 +8,7 @@ class MongoTokenAuthentication(TokenAuthentication):
 
     def authenticate_credentials(self, key):
         try:
-            token = self.model.objects.get(key=key.decode('UTF-8'))
+            token = self.model.objects.get(key=key)
         except self.model.DoesNotExist:
             raise exceptions.AuthenticationFailed('Invalid token')
 

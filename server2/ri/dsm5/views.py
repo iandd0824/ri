@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework import renderers
 from rest_framework import parsers
 
-from dsm5.serializers import AuthCustomTokenSerializer
+from dsm5.serializers import AuthCustomTokenSerializer, UserSerializer
 from rest_framework.authtoken.models import Token
 
 
@@ -85,7 +85,31 @@ class ObtainAuthToken(APIView):
 
         content = {
         #    'token': unicode(token.key),
-            'token': 'ttest',
+            'token': token,
         }
 
         return Response(content) 
+
+from rest_framework.authentication import TokenAuthentication
+from dsm5.authentication import MongoTokenAuthentication
+from rest_framework.permissions import IsAuthenticated
+
+class UserList(APIView):
+    """
+    List all users, or create a new user.
+    Authentication is needed for this methods
+    """
+    authentication_classes = (MongoTokenAuthentication,)
+    permission_classes = (IsAuthenticated,)
+    
+    def get(self, request, format=None):
+        users = User.objects.all()
+        serializer = UserSerializer(users, many=True)
+        return Response(serializer.data)
+
+    def post(self, request, format=None):
+        serializer = UserSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

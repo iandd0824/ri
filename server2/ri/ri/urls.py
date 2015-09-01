@@ -21,5 +21,6 @@ from dsm5 import views
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
    	url(r'^api/api-token-auth/', views.ObtainAuthToken.as_view()),
-   	
+   	url(r'^users/$', views.UserList.as_view()),
+
 ]
